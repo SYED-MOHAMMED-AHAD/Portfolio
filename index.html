@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohd Ahad | Aspiring Data Scientist</title>
+    <title>MOHD AHAD | Aspiring Data Scientist</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -16,8 +16,14 @@
         }
 
         header {
-            background: #222;
-            color: #f8f9fa;
+            background-image: url("iStock.jpg");
+            /* Header background image */
+            background-size: cover;
+            /* Cover the entire header */
+            background-repeat: no-repeat;
+            /* Prevent repeating the image */
+            background-position: center;
+            /* Center the image */
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -38,7 +44,8 @@
             list-style-type: none;
             padding: 0;
             margin: 20px 0 0;
-            text-align: center; /* Center align navigation */
+            text-align: center;
+            /* Center align navigation */
         }
 
         nav ul li {
@@ -71,7 +78,8 @@
             margin: 20px 0;
             background: #111;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Center align section content */
+            text-align: center;
+            /* Center align section content */
         }
 
         .container {
@@ -81,10 +89,17 @@
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            /* Adjust image width */
+            height: 200px;
+            /* Adjust image height */
             border-radius: 50%;
-            margin-top: 20px;
+            margin: 20px auto;
+            /* Center the image horizontally */
+            display: block;
+            /* Ensure the image is a block-level element */
+            object-fit: cover;
+            /* Ensure the image covers the entire circle */
         }
 
         .section h3 {
@@ -106,7 +121,8 @@
             color: #f8f9fa;
         }
 
-        .project-card, .experience-card {
+        .project-card,
+        .experience-card {
             text-align: left;
             background: #222;
             padding: 20px;
@@ -114,12 +130,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .project-card h4, .experience-card h4 {
+        .project-card h4,
+        .experience-card h4 {
             margin-top: 0;
             color: #FFD700;
         }
 
-        .project-card p, .experience-card p {
+        .project-card p,
+        .experience-card p {
             font-size: 1em;
             color: #ccc;
         }
@@ -139,7 +157,8 @@
             align-items: center;
         }
 
-        #contact-form input, #contact-form textarea {
+        #contact-form input,
+        #contact-form textarea {
             width: 80%;
             padding: 10px;
             margin: 10px 0;
@@ -185,7 +204,46 @@
         }
 
         .contact-info {
-            color: #FFFFE0; /* Light yellow color for email and phone */
+            color: #FFFFE0;
+            /* Light yellow color for email and phone */
+        }
+
+        /* About Me Section Background Image */
+        #about {
+            background-image: url("Data_Science_.webp");
+            /* Corrected path */
+            background-size: cover;
+            /* Cover the entire section */
+            background-repeat: no-repeat;
+            /* Prevent repeating the image */
+            background-position: center;
+            /* Center the image */
+            color: white;
+            /* Set text color to white for better visibility */
+        }
+
+        .about-content {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            padding: 20px;
+            text-align: center;
+            /* Center the text content */
+        }
+
+        /* Education Section Background Image */
+        #education {
+            background-image: url("edu_back.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Skills Section Background Image */
+        #skills {
+            background-image: url("data.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </head>
@@ -212,10 +270,12 @@
     </header>
 
     <section id="about" class="section">
-        <div class="container">
+        <div class="container about-content">
             <h3>About Me</h3>
-            <p>I am an aspiring data scientist with a passion for uncovering insights from data. My journey in data science has equipped me with strong analytical skills and experience in various data science tools and technologies.</p>
-            <img src="ME.jpeg" alt="MOHD AHAD" class="profile-image" />
+            <p>I am an aspiring data scientist with a passion for uncovering insights from data. My journey in data
+                science has equipped me with strong analytical skills and experience in various data science tools and
+                technologies.</p>
+            <img src="ME (1).jpeg" alt="MOHD AHAD" class="profile-image" />
         </div>
     </section>
 
@@ -252,33 +312,71 @@
             <div class="project-card">
                 <h4>Exploratory Data Analysis on Virat Kohli's Career</h4>
                 <ul>
-                    <li>Conducted an extensive EDA on Virat Kohli's cricket career from 2008 to 2024, uncovering insights such as a total of 26,704 career runs.</li>
-                    <li>Key insights: 51.86% of runs in ODIs, 33.14% in Tests, and 15.00% in T20Is, with an average strike rate of 77.71 and runs per innings of 46.20.</li>
-                    <li>Leveraged Python for web scraping, data extraction, and processing to gather and refine data.</li>
+                    <li>Conducted an extensive EDA on Virat Kohli's cricket career from 2008 to 2024, uncovering
+                        insights such as a total of 26,704 career runs.</li>
+                    <li>Key insights: 51.86% of runs in ODIs, 33.14% in Tests, and 15.00% in T20Is, with an average
+                        strike rate of 77.71 and runs per innings of 46.20.</li>
+                    <li>Leveraged Python for web scraping, data extraction, and processing to gather and refine data.
+                    </li>
                     <li>Applied NumPy, Pandas, Matplotlib, and Power BI to visualize and analyze gameplay data.</li>
                     <li>Delivered actionable insights to enhance strategic decision-making in sports performance.</li>
                 </ul>
-                <a href="https://github.com/SYED-MOHAMMED-AHAD" target="_blank">View Project</a>
+                <a href="https://github.com/SYED-MOHAMMED-AHAD/EDA-Using-Python/blob/main/Cricketer%20Carrier%20analysis.ipynb"
+                    target="_blank">View
+                    Project</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNTEyZWFlMzgtYTliZi00ZGE1LWEwYTQtMGNhYjhjMzNiNTk0IiwidCI6Ijk1MGE4YTY0LTYyZDAtNGM5Ny1hNzIxLTg2YzQ5NDczNWU3MCJ9"
+                    target="_blank">View Dashboard Analysis</a>
             </div>
             <div class="project-card">
                 <h4>Library Database Analysis</h4>
                 <ul>
-                    <li>Formulated and executed intricate MySQL queries to conduct an exhaustive analysis of an extensive library database comprising 8 different tables.</li>
+                    <li>Formulated and executed intricate MySQL queries to conduct an exhaustive analysis of an
+                        extensive library database comprising 8 different tables.</li>
                     <li>Employed joins, subqueries, and advanced SQL functions to retrieve and analyze data.</li>
-                    <li>Extracted and organized information on book inventory, borrower statistics, and branch performance.</li>
+                    <li>Extracted and organized information on book inventory, borrower statistics, and branch
+                        performance.</li>
                     <li>Utilized SQL for optimizing query performance and ensuring data accuracy.</li>
                 </ul>
-                <a href="https://github.com/SYED-MOHAMMED-AHAD" target="_blank">View Project</a>
+                <a href="https://github.com/SYED-MOHAMMED-AHAD/SQL/blob/main/Library%20Project%20updated..sql"
+                    target="_blank">View
+                    Project</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
             <div class="project-card">
                 <h4>Sentiment Analysis</h4>
                 <ul>
                     <li>Analyzed 570,000 customer reviews using Google Colab to identify sentiment trends.</li>
                     <li>Implemented NLP techniques and machine learning models for sentiment analysis.</li>
-                    <li>Forecasted sentiment scores with high accuracy of 76%, contributing to improved customer experience strategies.</li>
+                    <li>Forecasted sentiment scores with high accuracy of 76%, contributing to improved customer
+                        experience strategies.</li>
                     <li>Optimized customer experience by providing actionable insights from data analysis.</li>
                 </ul>
-                <a href="https://github.com/SYED-MOHAMMED-AHAD" target="_blank">View Project</a>
+                <a href="https://github.com/SYED-MOHAMMED-AHAD/Machine-Learning/blob/main/BA_FINAL.ipynb"
+                    target="_blank">View
+                    Project</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="project-card">
+                <h4>British Airways Booking Prediction</h4>
+                <ul>
+                    <li>Analyzed booking data to identify that most trips are round trips, with circle and one-way trips
+                        being less frequent, and that solo travelers or pairs are the majority.</li>
+                    <li>Discovered that flights are more common on weekdays, especially on Day 1, indicating higher
+                        demand compared to weekends.</li>
+                    <li>Found that Australia leads in bookings (39.1%), with Malaysia (15.7%) and South Korea (10.0%)
+                        following, while other countries contribute smaller shares.</li>
+                    <li>Identified that approximately 85% of bookings are incomplete, highlighting a significant
+                        drop-off or issues in the booking process.</li>
+                    <li>Investigated correlations, revealing weak relationships between booking_complete and other
+                        factors, with notable correlations including a slight positive one with wants_extra_baggage and
+                        a negative one with flight_duration.</li>
+                    <li>Utilized OneHotEncoder, StandardScaler, RandomForestClassifier, and XGBClassifier, achieving an
+                        87% accuracy in predicting booking completions through comprehensive modeling and hyperparameter
+                        tuning.</li>
+                </ul>
+                <a href="https://github.com/SYED-MOHAMMED-AHAD/Machine-Learning/blob/main/BA_FINAL.ipynb"
+                    target="_blank">View
+                    Project</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiOTYyYTUyODEtYzU4Ny00ZjZjLTgzNTUtOTNlM2NkMTExMGQ3IiwidCI6Ijk1MGE4YTY0LTYyZDAtNGM5Ny1hNzIxLTg2YzQ5NDczNWU3MCJ9"
+                    target="_blank">View Dashboard Analysis</a>
             </div>
         </div>
     </section>
@@ -289,11 +387,16 @@
             <div class="experience-card">
                 <h4>Network Administrator, Eduquity (2022 – 2023)</h4>
                 <ul>
-                    <li>Administered and maintained network hardware and software, ensuring optimal performance and security.</li>
-                    <li>Effectively led, coordinated, and supervised a team during each exam operation to ensure a seamless and efficient exam process.</li>
-                    <li>Supervised network setup and maintenance for 1200 candidates during CMC medical exam at VIT Vellore.</li>
-                    <li>Delivered projects with 100% efficiency, including major exams like JEE, NTA exams, BSNL, and MPESB across India.</li>
-                    <li>Implemented robust security protocols for 500 servers and swiftly resolved network issues to minimize downtime.</li>
+                    <li>Administered and maintained network hardware and software, ensuring optimal performance and
+                        security.</li>
+                    <li>Effectively led, coordinated, and supervised a team during each exam operation to ensure a
+                        seamless and efficient exam process.</li>
+                    <li>Supervised network setup and maintenance for 1200 candidates during CMC medical exam at VIT
+                        Vellore.</li>
+                    <li>Delivered projects with 100% efficiency, including major exams like JEE, NTA exams, BSNL, and
+                        MPESB across India.</li>
+                    <li>Implemented robust security protocols for 500 servers and swiftly resolved network issues to
+                        minimize downtime.</li>
                 </ul>
             </div>
         </div>

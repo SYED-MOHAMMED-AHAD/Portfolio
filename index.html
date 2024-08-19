@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOHD AHAD | Aspiring Data Scientist</title>
+    <title>Mohd Ahad | Aspiring Data Scientist</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -32,7 +32,6 @@
         .header-content h1 {
             margin: 0;
             font-size: 2.5em;
-            text-transform: uppercase;
         }
 
         .header-content h2 {
@@ -105,7 +104,6 @@
 
         .section h3 {
             margin-bottom: 20px;
-            font-size: 2em;
             color: #FFD700;
         }
 
@@ -205,7 +203,7 @@
         }
 
         .contact-info {
-            color: #FFFFE0;
+            color: #000;
             /* Light yellow color for email and phone */
         }
 
@@ -246,6 +244,96 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        /* Interactive Font Styles */
+        h1, h2, h3, h4, p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400; /* Set a default font weight */
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700; /* Make headings bolder */
+            letter-spacing: 0.1em; /* Add slight spacing between letters */
+        }
+
+        h1 {
+            font-size: 3.5em; /* Adjust heading sizes as needed */
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+
+        h4 {
+            font-size: 1.5em;
+        }
+
+        p {
+            line-height: 1.6; /* Adjust line height for readability */
+        }
+
+        /* Adjust heading sizes as needed for the 'About Me' section */
+        #about h3 {
+            font-size: 3em;
+        }
+
+        #about p {
+            font-size: 1.3em;
+        }
+
+        /* Increased font sizes for specific sections */
+        #about h3 {
+            font-size: 3em;
+        }
+
+        #about p {
+            font-size: 1.3em;
+        }
+
+        #education h3 {
+            font-size: 2.8em; /* Increased font size */
+        }
+
+        #education ul li {
+            font-size: 1.3em; /* Increased font size */
+        }
+
+        #skills h3 {
+            font-size: 2.5em; /* Increased font size */
+        }
+
+        #skills ul li {
+            font-size: 1.2em; /* Increased font size */
+        }
+
+        /* Playfair Display font for "About Me" section */
+        #about h3,
+        #about p {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Contact Me Section Background Image */
+        #contact {
+            background-image: url("website.jpg");
+            /* Background image for Contact Me section */
+            background-size: cover;
+            /* Cover the entire section */
+            background-repeat: no-repeat;
+            /* Prevent repeating the image */
+            background-position: center;
+            /* Center the image */
+        }
+
+        /* Change Contact Section Colors */
+        #contact h3,
+        #contact .contact-info,
+        #contact .social-links a {
+            color: #000; /* Black color */
+        }
     </style>
 </head>
 
@@ -253,7 +341,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>Mohd Ahad</h1>
+                <h1>MOHD AHAD</h1>
                 <h2>Aspiring Data Scientist</h2>
                 <nav>
                     <ul>
@@ -272,26 +360,24 @@
 
     <section id="about" class="section">
         <div class="container about-content">
-            <h3>About Me</h3>
-            <p>I am an aspiring data scientist with a passion for uncovering insights from data. My journey in data
-                science has equipped me with strong analytical skills and experience in various data science tools and
-                technologies.</p>
-            <img src="ME.jpeg" alt="MOHD AHAD" class="profile-image" />
+            <h3>ABOUT ME</h3>
+            <p>Aspiring Data Scientist with hands-on experience in Python, SQL,Power BI and machine learning. I specialize in data analysis, predictive modeling, and delivering actionable insights. My background as a Network Administrator and recent work in sentiment analysis and airline booking data showcase my ability to tackle complex problems and optimize performance. I'm passionate about turning data into strategies that drive success.</p>
+            <img src="ME (1).jpeg" alt="MOHD AHAD" class="profile-image" />
         </div>
     </section>
 
     <section id="education" class="section">
         <div class="container">
-            <h3>Education</h3>
-            <p>Data Science, Innomatics Research Labs (2023 – 2024)</p>
-            <p>B.A, Dr BR Ambedkar Open University</p>
-            <p>Diploma in Engineering (IT), Maulana Azad National Urdu University</p>
+            <h3>EDUCATION</h3>
+            <p style="font-size: 1.3em;">Data Science, Innomatics Research Labs (2023 – 2024)</p>
+            <p style="font-size: 1.3em;">B.A, Dr BR Ambedkar Open University</p>
+            <p style="font-size: 1.3em;">Diploma in Engineering (IT), Maulana Azad National Urdu University</p>
         </div>
     </section>
 
     <section id="skills" class="section">
         <div class="container">
-            <h3>Skills</h3>
+            <h3>SKILLS</h3>
             <ul class="skills-list">
                 <li>Python Programming</li>
                 <li>NumPy</li>
@@ -307,9 +393,9 @@
         </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="Projects" class="section">
         <div class="container">
-            <h3>Projects</h3>
+            <h3>PROJECTS</h3>
             <div class="project-card">
                 <h4>Exploratory Data Analysis on Virat Kohli's Career</h4>
                 <ul>

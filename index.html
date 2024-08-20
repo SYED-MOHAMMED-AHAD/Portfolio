@@ -334,6 +334,10 @@
         #contact .social-links a {
             color: #000; /* Black color */
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -341,7 +345,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>MOHD AHAD</h1>
+                <h1>Mohd Ahad</h1>
                 <h2>Aspiring Data Scientist</h2>
                 <nav>
                     <ul>
@@ -360,15 +364,15 @@
 
     <section id="about" class="section">
         <div class="container about-content">
-            <h3>ABOUT ME</h3>
-            <p>Aspiring Data Scientist with hands-on experience in Python, SQL,Power BI and machine learning. I specialize in data analysis, predictive modeling, and delivering actionable insights. My background as a Network Administrator and recent work in sentiment analysis and airline booking data showcase my ability to tackle complex problems and optimize performance. I'm passionate about turning data into strategies that drive success.</p>
-            <img src="ME.jpeg" alt="MOHD AHAD" class="profile-image" />
+            <h3>About Me</h3>
+            <p>Aspiring Data Scientist with hands-on experience in Python, SQL, and machine learning. I specialize in data analysis, predictive modeling, and delivering actionable insights. My background as a Network Administrator and recent work in sentiment analysis and airline booking data showcase my ability to tackle complex problems and optimize performance. I'm passionate about turning data into strategies that drive success.</p>
+            <img src="ME (1).jpeg" alt="MOHD AHAD" class="profile-image" />
         </div>
     </section>
 
     <section id="education" class="section">
         <div class="container">
-            <h3>EDUCATION</h3>
+            <h3>Education</h3>
             <p style="font-size: 1.3em;">Data Science, Innomatics Research Labs (2023 – 2024)</p>
             <p style="font-size: 1.3em;">B.A, Dr BR Ambedkar Open University</p>
             <p style="font-size: 1.3em;">Diploma in Engineering (IT), Maulana Azad National Urdu University</p>
@@ -377,7 +381,7 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h3>SKILLS</h3>
+            <h3>Skills</h3>
             <ul class="skills-list">
                 <li>Python Programming</li>
                 <li>NumPy</li>
@@ -393,9 +397,9 @@
         </div>
     </section>
 
-    <section id="Projects" class="section">
+    <section id="projects" class="section">
         <div class="container">
-            <h3>PROJECTS</h3>
+            <h3>Projects</h3>
             <div class="project-card">
                 <h4>Exploratory Data Analysis on Virat Kohli's Career</h4>
                 <ul>
@@ -492,15 +496,20 @@
     <section id="contact" class="section">
         <div class="container">
             <h3>Contact Me</h3>
-            <form id="contact-form" action="contact.php" method="post">
+            <form id="contact-form" action="https://formspree.io/f/mrbzajav" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="subject" placeholder="Subject">
                 <textarea name="message" placeholder="Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+
+            <div id="success-message" class="hidden">
+                <p>Form submitted successfully!</p>
+            </div>
+
             <p>Email: <a href="mailto:mohdahad2216@gmail.com" class="contact-info">mohdahad2216@gmail.com</a></p>
-<!--             <p>Phone: <a href="tel:+917093613050" class="contact-info">7093613050</a></p> -->
+            <p>Phone: <a href="tel:+917093613050" class="contact-info">7093613050</a></p>
             <div class="social-links">
                 <a href="https://linkedin.com/in/mohammad-ahad1" target="_blank">LinkedIn</a>
                 <a href="https://github.com/SYED-MOHAMMED-AHAD" target="_blank">GitHub</a>
@@ -513,6 +522,60 @@
             <p>&copy; 2024 Mohd Ahad</p>
         </div>
     </footer>
+    <script
+  src="https://replit.com/public/js/replit-badge-v2.js"
+  theme="dark"
+  position="bottom-right"
+  ></script>
+    <script>
+        // Function to reset the form fields
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+        }
+
+        // Function to show the success message
+        function showSuccessMessage() {
+            document.getElementById('success-message').classList.remove('hidden');
+        }
+
+        // Function to hide the success message
+        function hideSuccessMessage() {
+            document.getElementById('success-message').classList.add('hidden');
+        }
+
+        // Add an event listener to the form's submit button
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(event) {
+            // Prevent default form submission (reload)
+            event.preventDefault();
+
+            // Send the form data using Formspree
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm)
+            })
+            .then(response => {
+                // Check for a successful response (status code 200)
+                if (response.ok) {
+                    // Wait for a short delay (500 milliseconds) before showing the message
+                    setTimeout(function() {
+                        // If successful, show the success message
+                        showSuccessMessage();
+                        // Reset the form fields
+                        resetForm();
+                        // Hide the success message after 3 seconds
+                        setTimeout(hideSuccessMessage, 3000); 
+                    }, 500); // Add a delay here
+                } else {
+                    // If there's an error, log the error to the console
+                    console.error('Error submitting form:', response.status);
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+            });
+        });
+    </script>
 </body>
 
 </html>

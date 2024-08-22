@@ -496,7 +496,7 @@
     <section id="contact" class="section">
         <div class="container">
             <h3>Contact Me</h3>
-            <form id="contact-form" action="https://formspree.io/f/mrbzajav" method="POST">
+            <form id="contact-form" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="subject" placeholder="Subject">
@@ -509,7 +509,6 @@
             </div>
 
             <p>Email: <a href="mailto:mohdahad2216@gmail.com" class="contact-info">mohdahad2216@gmail.com</a></p>
-            <p>Phone: <a href="tel:+917093613050" class="contact-info">7093613050</a></p>
             <div class="social-links">
                 <a href="https://linkedin.com/in/mohammad-ahad1" target="_blank">LinkedIn</a>
                 <a href="https://github.com/SYED-MOHAMMED-AHAD" target="_blank">GitHub</a>
@@ -549,31 +548,11 @@
             // Prevent default form submission (reload)
             event.preventDefault();
 
-            // Send the form data using Formspree
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: new FormData(contactForm)
-            })
-            .then(response => {
-                // Check for a successful response (status code 200)
-                if (response.ok) {
-                    // Wait for a short delay (500 milliseconds) before showing the message
-                    setTimeout(function() {
-                        // If successful, show the success message
-                        showSuccessMessage();
-                        // Reset the form fields
-                        resetForm();
-                        // Hide the success message after 3 seconds
-                        setTimeout(hideSuccessMessage, 3000); 
-                    }, 500); // Add a delay here
-                } else {
-                    // If there's an error, log the error to the console
-                    console.error('Error submitting form:', response.status);
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting form:', error);
-            });
+            // Show the alert message
+            alert("Thank you for reaching out! I'll get back to you soon.");
+
+            // Reset the form fields
+            resetForm();
         });
     </script>
 </body>

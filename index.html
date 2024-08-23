@@ -338,6 +338,81 @@
         .hidden {
             display: none;
         }
+
+        /* New styles for the contact form */
+        .contact-section {
+            padding: 60px 20px;
+            margin: 20px 0;
+            background: #111;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-intro {
+            margin-bottom: 30px;
+        }
+
+        .contact-title {
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .contact-description {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .form-group-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            color: #FFD700;
+            margin-bottom: 5px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #f8f9fa;
+            background: #222;
+        }
+
+        .form-textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            padding: 10px 20px;
+            border: none;
+            background: #FFD700;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .form-submit:hover {
+            background: #FFC107;
+        }
     </style>
 </head>
 
@@ -493,22 +568,31 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <h3>Contact Me</h3>
-            <form id="contact-form" method="POST">
+            <div class="contact-intro">
+                <h2 class="contact-title">Contact me</h2>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+
+                <input type="hidden" name="access_key" value="4a2cce90-2e3c-4211-a02c-e4309b293002">
+                <input type="hidden" name="subject" value="New Contact Form Submission"> 
+                <input type="hidden" name="from_name" value="My Website"> 
+
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="subject" placeholder="Subject">
                 <textarea name="message" placeholder="Message" required></textarea>
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                 <button type="submit">Send Message</button>
+
+                <div id="result"></div>
+
             </form>
 
-            <div id="success-message" class="hidden">
-                <p>Form submitted successfully!</p>
-            </div>
-
-            <p>Email: <a href="mailto:mohdahad2216@gmail.com" class="contact-info">mohdahad2216@gmail.com</a></p>
+                <p><span style="color: #000;">Email:</span>  <a href="mailto:mohdahad2216@gmail.com" class="contact-info">mohdahad2216@gmail.com</a></p>
             <div class="social-links">
                 <a href="https://linkedin.com/in/mohammad-ahad1" target="_blank">LinkedIn</a>
                 <a href="https://github.com/SYED-MOHAMMED-AHAD" target="_blank">GitHub</a>
@@ -553,6 +637,46 @@
 
             // Reset the form fields
             resetForm();
+        });
+
+        // JavaScript for Web3Forms Integration
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
         });
     </script>
 </body>
